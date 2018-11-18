@@ -15,6 +15,13 @@ export class RecipeService {
     [
       new Ingredient('Banana', 3),
       new Ingredient('Bread', 1)
+    ]),
+    new Recipe('Hamburger', 'This is a hamburger.',
+    // tslint:disable-next-line:max-line-length
+    'https://www.tasteofhome.com/wp-content/uploads/2017/10/All-American-Hamburgers_EXPS_THJJ17_29321_D02_03_5b-1-696x696.jpg',
+    [
+      new Ingredient('Burger', 1),
+      new Ingredient('Bread', 1)
     ])
   ];
 
@@ -22,6 +29,10 @@ export class RecipeService {
 
   getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number): Recipe {
+    return this.recipes[index];
   }
 
   addToShoppingList(ingredients: Ingredient[]) {
